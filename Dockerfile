@@ -1,7 +1,7 @@
 FROM alpine:latest
 RUN apk update \
     && apk upgrade \
-    && apk --no-cache add curl git wget bash ca-certificates openssl \
+    && apk --no-cache add curl git wget bash ca-certificates openssl nano \
     && wget https://storage.googleapis.com/kubernetes-release/release/$(wget https://storage.googleapis.com/kubernetes-release/release/stable.txt -q -O -)/bin/linux/amd64/kubectl -q -O /usr/local/bin/kubectl \
     && chmod a+x /usr/local/bin/kubectl \
     && mkdir /.kube \
